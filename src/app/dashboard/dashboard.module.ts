@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-import { DetailComponent } from './detail/detail.component';
-import { MainComponent } from './main/main.component';
+import { DetailComponent } from './components/detail/detail.component';
 import { SharedModule } from '../shared/shared.module';
+import { DataFormComponent } from './components/detail/data-form/data-form.component';
+import { MainComponent } from './components/main/main.component';
+import { ViewDetailComponent } from './components/detail/view-detail/view-detail.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     DetailComponent,
-    MainComponent
+    MainComponent,
+    DataFormComponent,
+    ViewDetailComponent
   ],
   imports: [
     CommonModule,

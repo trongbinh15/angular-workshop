@@ -1,8 +1,8 @@
-import { DetailComponent } from './detail/detail.component';
+import { DetailComponent } from './components/detail/detail.component';
 import { DashboardComponent } from './dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainComponent } from './main/main.component';
+import { MainComponent } from './components/main/main.component';
 
 const routes: Routes = [
   {

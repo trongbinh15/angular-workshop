@@ -4,7 +4,7 @@
     <div cdkDropList #newList="cdkDropList" [cdkDropListData]="newL" [cdkDropListConnectedTo]="[doneList, progressList]"
       class="task-list" (cdkDropListDropped)="drop($event)">
       <div class="task-box" *ngFor="let item of newL" (cdkDragStarted)="handleDragStart($event)"
-        (click)="handleClick($event)" cdkDrag>{{item}}</div>
+        (click)="handleClick(item)" cdkDrag>{{item.title}}</div>
     </div>
   </div>
   <div class="p-2 border task-container">
@@ -12,7 +12,7 @@
     <div cdkDropList #progressList="cdkDropList" [cdkDropListData]="progress"
       [cdkDropListConnectedTo]="[newList, doneList]" class="task-list" (cdkDropListDropped)="drop($event)">
       <div class="task-box" *ngFor="let item of progress" (cdkDragStarted)="handleDragStart($event)"
-        (click)="handleClick($event)" cdkDrag>{{item}}</div>
+        (click)="handleClick(item)" cdkDrag>{{item.title}}</div>
     </div>
   </div>
   <div class="p-2 border task-container">
@@ -20,7 +20,7 @@
     <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[newList, progressList]"
       class="task-list" (cdkDropListDropped)="drop($event)">
       <div class="task-box" *ngFor="let item of done" (cdkDragStarted)="handleDragStart($event)"
-        (click)="handleClick($event)" cdkDrag>{{item}}</div>
+        (click)="handleClick(item)" cdkDrag>{{item.title}}</div>
     </div>
   </div>
 </div>

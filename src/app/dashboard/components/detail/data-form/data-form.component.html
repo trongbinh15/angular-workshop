@@ -1,0 +1,18 @@
+<form [formGroup]="formControls">
+  <label for="title">Title:</label>
+  <input id="title" type="text" formControlName="title">
+  <input id="description" type="text" formControlName="description">
+
+  <mat-radio-group aria-label="Select an option" formControlName='status'>
+    <mat-radio-button *ngFor="let item of statusList" [value]='item.value'>{{item.text}}</mat-radio-button>
+  </mat-radio-group>
+</form>
+
+{{ formControls.value | json }}
+
+<div class="actions">
+  <button mat-button *ngIf="isAddMode()" (click)='onSubmit()'>Submit</button>
+  <button mat-button *ngIf="isEditMode()" (click)='onUpdate()'>Update</button>
+  <button mat-button *ngIf="isEditMode()" (click)='onDelete()'>Delete</button>
+  <button mat-button (click)='onCancel()'>Cancel</button>
+</div>
