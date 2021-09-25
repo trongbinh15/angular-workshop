@@ -1,0 +1,6 @@
+<div>
+  <button mat-raised-button (click)='addUser()'>Add</button>
+  <ng-container *ngFor="let user of users">
+    <app-user-card [user]="user"></app-user-card>
+  </ng-container>
+</div>

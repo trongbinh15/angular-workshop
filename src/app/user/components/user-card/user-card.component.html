@@ -1,0 +1,24 @@
+<div mat-dialog-content [formGroup]="formControls">
+  <div>
+    <mat-label>Name</mat-label>
+    <div *ngIf="!editMode">{{user.name}}</div>
+    <div>
+      <input *ngIf="editMode" formControlName='name'>
+    </div>
+  </div>
+  <div>
+    <mat-label>Role</mat-label>
+    <div *ngIf="!editMode">{{user.role}}</div>
+    <div>
+      <input *ngIf="editMode" formControlName='role'>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button *ngIf="editMode" (click)='onCancel()'>Cancel</button>
+    <button mat-raised-button *ngIf="!editMode" (click)='toggleEditMode()'>Edit</button>
+    <button mat-raised-button *ngIf="editMode" (click)='onUpdate()'>Update</button>
+    <button mat-raised-button (click)='onDelete()'>Remove</button>
+  </div>
+</div>
+

@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Create new user</h1>
+<div mat-dialog-content [formGroup]="formControl">
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName='name'>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Role</mat-label>
+    <input matInput formControlName='role'>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="formControl.value" cdkFocusInitial>Submit</button>
+</div>
