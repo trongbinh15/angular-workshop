@@ -5,6 +5,9 @@
     <div>
       <input *ngIf="editMode" formControlName='name'>
     </div>
+    <div *ngIf="formControls.get('name')?.errors?.required">
+      You need to enter a name
+    </div>
   </div>
   <div>
     <mat-label>Role</mat-label>

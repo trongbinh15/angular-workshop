@@ -17,6 +17,10 @@ const routes: Routes = [
     loadChildren: () => import('./user/user.module').then(m => m.UserModule)
   },
   {
+    path: 'schedule',
+    loadChildren: () => import('./schedule/schedule.module').then(m => m.ScheduleModule)
+  },
+  {
     path: '**',
     component: NotFoundComponent
   }

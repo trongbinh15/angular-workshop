@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -15,15 +15,18 @@ export class AddUserComponent implements OnInit {
   ) { }
 
   formControl = this.fb.group({
-    name: [''],
+    name: ['', Validators.required],
     role: [''],
   });
 
   ngOnInit(): void {
   }
 
-  onNoClick(): void {
-    this.dialogRef.close();
+  onSubmit() {
+    if (this.formControl.valid) {
+      this.dialogRef.close(this.formControl.value);
+    } else {
+      this.formControl.markAllAsTouched();
+    }
   }
-
 }

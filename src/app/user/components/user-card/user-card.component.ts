@@ -1,6 +1,6 @@
 import { ConfirmDialogComponent } from './../../../shared/confirm-dialog.component';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ModalService } from 'src/app/shared/modal.service';
 import { User } from '../../model/user.model';
 import { UserComponent } from '../../user.component';
@@ -22,7 +22,7 @@ export class UserCardComponent implements OnInit {
 
 
   formControls = this.fb.group({
-    name: [''],
+    name: ['', Validators.required],
     role: [''],
   });
 
@@ -55,8 +55,12 @@ export class UserCardComponent implements OnInit {
   }
 
   onUpdate(): void {
-    const model = { ...this.user, ...this.formControls.value };
-    this.parent.updateUser(model);
+    if (this.formControls.valid) {
+      const model = { ...this.user, ...this.formControls.value };
+      this.parent.updateUser(model);
+    } else {
+      this.formControls.markAllAsTouched();
+    }
   }
 
 }

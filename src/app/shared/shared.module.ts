@@ -9,7 +9,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ModalService } from './modal.service';
+import { MatTableModule } from '@angular/material/table';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [ConfirmDialogComponent],
   imports: [
@@ -23,6 +25,9 @@ import { ModalService } from './modal.service';
     MatRadioModule,
     MatDialogModule,
     MatFormFieldModule,
+    MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   exports: [
     MatButtonModule,
@@ -35,6 +40,9 @@ import { ModalService } from './modal.service';
     MatDialogModule,
     MatFormFieldModule,
     ConfirmDialogComponent,
+    MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ]
 })
 export class SharedModule { }

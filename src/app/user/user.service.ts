@@ -52,8 +52,8 @@ export class UserService {
   }
 
   addUser(user: User) {
-    user.id = uuid();
     if (user) {
+      user.id = uuid();
       this.list.push(user);
     }
     return of(true);

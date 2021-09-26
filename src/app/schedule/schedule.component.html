@@ -1,0 +1,43 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> Title </th>
+    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="creator">
+    <th mat-header-cell *matHeaderCellDef> Creator </th>
+    <td mat-cell *matCellDef="let element"> {{element.creator}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Description </th>
+    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="location">
+    <th mat-header-cell *matHeaderCellDef> Location </th>
+    <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="timeStart">
+    <th mat-header-cell *matHeaderCellDef> Time Start </th>
+    <td mat-cell *matCellDef="let element"> {{element.timeStart | date:'short'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="timeEnd">
+    <th mat-header-cell *matHeaderCellDef> Time End </th>
+    <td mat-cell *matCellDef="let element"> {{element.timeEnd | date:'short'}} </td>
+    </ng-container>
+    
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button matTooltip="Detail" (click)='onDetail(element)'>Detail</button>
+      <button mat-icon-button matTooltip="Edit" (click)='onUpdate(element)'>Edit</button>
+      <button mat-icon-button matTooltip="Delete" (click)="onDelete(element)">Delete</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
