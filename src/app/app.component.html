@@ -1,6 +1,6 @@
 <nav class="p-2">
   <ul class="inline-flex items-center justify-start space-x-6">
-    <li><img src="../assets/angular.svg" width="50" height="50"/></li>
+    <li><img src="../assets/angular.svg" width="50" height="50" /></li>
     <li>
       <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
     </li>
@@ -10,10 +10,19 @@
     <li>
       <a routerLink="/schedule" routerLinkActive="active">Schedule</a>
     </li>
+    <li>
+      <button *ngIf="!isLoggedIn" (click)="onLogin()">
+        Login
+      </button>
+      <button *ngIf="isLoggedIn" (click)="onLogout()">
+        Logout
+      </button>
+    </li>
   </ul>
 </nav>
-<header class="p-2">
+<header class="flex justify-between p-2">
   <h1>Angular Sprint</h1>
+  <span *ngIf="isLoggedIn">admin@gmail.com</span>
 </header>
 <main class="p-4">
 <router-outlet></router-outlet>
