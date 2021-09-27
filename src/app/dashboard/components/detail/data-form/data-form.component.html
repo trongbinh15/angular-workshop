@@ -1,18 +1,21 @@
-<form [formGroup]="formControls">
-  <label for="title">Title:</label>
-  <input id="title" type="text" formControlName="title">
-  <input id="description" type="text" formControlName="description">
+<div class="container flex flex-col items-center justify-center p-5">
+  <div class="w-full p-2 border rounded">
+    <form [formGroup]="formControls" class="flex flex-col m-3 space-y-4">
+      <label for="title">Title:</label>
+      <input id="title" type="text" formControlName="title" placeholder="Title">
+      <input id="description" type="text" formControlName="description" placeholder="Description">
 
-  <mat-radio-group aria-label="Select an option" formControlName='status'>
-    <mat-radio-button *ngFor="let item of statusList" [value]='item.value'>{{item.text}}</mat-radio-button>
-  </mat-radio-group>
-</form>
+      <mat-radio-group aria-label="Select an option" formControlName='status' class="space-x-4">
+        <mat-radio-button *ngFor="let item of statusList" [value]='item.value'>{{item.text}}</mat-radio-button>
+      </mat-radio-group>
+    </form>
 
-{{ formControls.value | json }}
+    <div class="flex justify-center space-x-4 actions">
+      <button mat-raised-button color='primary' *ngIf="isAddMode()" (click)='onSubmit()'>Submit</button>
+      <button mat-raised-button color='primary' *ngIf="isEditMode()" (click)='onUpdate()'>Update</button>
+      <button mat-raised-button color='warn' *ngIf="isEditMode()" (click)='onDelete()'>Delete</button>
+      <button mat-raised-button color='primary' (click)='onCancel()'>Cancel</button>
+    </div>
 
-<div class="actions">
-  <button mat-button *ngIf="isAddMode()" (click)='onSubmit()'>Submit</button>
-  <button mat-button *ngIf="isEditMode()" (click)='onUpdate()'>Update</button>
-  <button mat-button *ngIf="isEditMode()" (click)='onDelete()'>Delete</button>
-  <button mat-button (click)='onCancel()'>Cancel</button>
+  </div>
 </div>
