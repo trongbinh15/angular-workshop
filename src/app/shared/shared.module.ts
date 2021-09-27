@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [ConfirmDialogComponent],
   imports: [
@@ -28,6 +29,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatTableModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatIconModule,
   ],
   exports: [
     MatButtonModule,
@@ -43,6 +45,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatTableModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatIconModule,
   ]
 })
 export class SharedModule { }

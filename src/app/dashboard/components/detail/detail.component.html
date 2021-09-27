@@ -4,12 +4,12 @@
 </ng-container>
 
 <ng-template #viewAndEdit>
-  <mat-tab-group mat-align-tabs="end">
-    <mat-tab label="Edit">
-      <app-data-form [task]='task$ | async'></app-data-form>
-    </mat-tab>
+  <mat-tab-group mat-align-tabs="end" dynamicHeight>
     <mat-tab label="View">
       <app-view-detail [task]='task$ |async'></app-view-detail>
+    </mat-tab>
+    <mat-tab label="Edit">
+      <app-data-form [task]='task$ | async'></app-data-form>
     </mat-tab>
   </mat-tab-group>
 </ng-template>

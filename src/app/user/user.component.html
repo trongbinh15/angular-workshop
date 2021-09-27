@@ -1,6 +1,8 @@
-<div>
+<div class="container flex flex-col">
   <button mat-raised-button (click)='addUser()'>Add</button>
-  <ng-container *ngFor="let user of users">
+  <div class="user-list">
+  <ng-container *ngFor="let user of users" >
     <app-user-card [user]="user"></app-user-card>
   </ng-container>
+  </div>
 </div>

@@ -31,10 +31,10 @@
     
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef> </th>
-    <td mat-cell *matCellDef="let element">
-      <button mat-icon-button matTooltip="Detail" (click)='onDetail(element)'>Detail</button>
-      <button mat-icon-button matTooltip="Edit" (click)='onUpdate(element)'>Edit</button>
-      <button mat-icon-button matTooltip="Delete" (click)="onDelete(element)">Delete</button>
+    <td mat-cell *matCellDef="let element" class="space-x-4">
+      <button mat-raised-button matTooltip="Detail" (click)='onDetail(element)'>Detail</button>
+      <button mat-raised-button color='primary' matTooltip="Edit" (click)='onUpdate(element)'>Edit</button>
+      <button mat-raised-button color='warn' matTooltip="Delete" (click)="onDelete(element)">Delete</button>
     </td>
   </ng-container>
 

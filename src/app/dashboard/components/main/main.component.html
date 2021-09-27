@@ -1,6 +1,9 @@
 <div class="container flex">
   <div class="p-2 border task-container">
-    <h2 class="title new">New Tasks<button mat-raised-button color="primary" (click)="onAddTask()">Add</button></h2>
+    <div class="flex items-center justify-around title new">
+      <h2>New Tasks</h2>
+      <button mat-raised-button color="primary" (click)="onAddTask()">Add</button>
+    </div>
     <div cdkDropList #newList="cdkDropList" [cdkDropListData]="newL" [cdkDropListConnectedTo]="[doneList, progressList]"
       class="task-list" (cdkDropListDropped)="drop($event)">
       <div class="task-box" *ngFor="let item of newL" (cdkDragStarted)="handleDragStart($event)"
