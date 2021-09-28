@@ -12,7 +12,7 @@ import { AddUserComponent } from './components/add-user/add-user.component';
   declarations: [
     UserComponent,
     UserCardComponent,
-    AddUserComponent
+    AddUserComponent,
   ],
   imports: [
     CommonModule,
